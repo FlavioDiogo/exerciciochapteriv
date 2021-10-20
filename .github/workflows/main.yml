@@ -29,22 +29,3 @@ jobs:
         uses: actions/upload-artifact@v2.2.4
         with:
           path: cypress/videos
-          
-          
-@FlavioDiogo
- 
-Leave a comment
-Nenhum arquivo selecionado
-Attach files by dragging & dropping, selecting or pasting them.
-© 2021 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Docs
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
