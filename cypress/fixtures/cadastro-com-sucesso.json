@@ -1,0 +1,10 @@
+{
+               
+    "user":{
+    "email":"chpaterivflavio@mail.com",
+    "username":"chapterivflavio",
+    "bio":null,
+    "image":"https://realworld-temp-api.herokuapp.com/images/smiley-cyrus.jpeg",
+    "token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImNocGF0ZXJpdmZsYXZpb0BtYWlsLmNvbSIsInVzZXJuYW1lIjoiY2hhcHRlcml2ZmxhdmlvIiwiYmlvIjpudWxsLCJpbWFnZSI6Imh0dHBzOi8vcmVhbHdvcmxkLXRlbXAtYXBpLmhlcm9rdWFwcC5jb20vaW1hZ2VzL3NtaWxleS1jeXJ1cy5qcGVnIiwiaWF0IjoxNjM0NTk1MDg2LCJleHAiOjE2Mzk3NzkwODZ9.5Z7HYyokZiAoZH3sm12q5bxbxr9Jkx2kAmSZrduQSYs"
+    }
+}
