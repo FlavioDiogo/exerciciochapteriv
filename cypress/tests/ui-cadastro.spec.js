@@ -1,5 +1,8 @@
 /// <reference types="cypress" />
 
+import articles from '../support/pages/articles'
+
+
 describe('Cadastro de usuário', () => {
   it('Cadastrar com dados válidos', () => {
     cy.intercept({
@@ -10,10 +13,7 @@ describe('Cadastro de usuário', () => {
       fixture: 'cadastro-com-sucesso'
     }).as('postUsers')
     cy.visit('register')
-    cy.get('[placeholder=Username]').type('flaviochapteriv')
-    cy.get('[placeholder=Email]').type('flaviochapteriv@teste.com.br')
-    cy.get('[placeholder=Password]').type('12346')
-    cy.get('button.btn-primary').click()
+    articles.cadastrarUsuarioComSucesso()
     cy.contains('No articles are here... yet.').should('be.visible')
   })
 
@@ -26,10 +26,24 @@ describe('Cadastro de usuário', () => {
       fixture: 'usuario-existente'
     }).as('postUsers')
     cy.visit('register')
-    cy.get('[placeholder=Username]').type('flaviochapteriv')
-    cy.get('[placeholder=Email]').type('flaviochapteriv@teste.com.br')
-    cy.get('[placeholder=Password]').type('12346')
-    cy.get('button.btn-primary').click()
+    articles.cadastrarUsuarioMesmoNome()
     cy.contains('username has already been taken').should('be.visible')
   })
+
+  it('E-mail já existente', () => {
+    cy.intercept({
+      method: 'POST',
+      path: '/api/users'
+    }, {
+      statusCode: 422,
+      fixture: 'email-existente'
+    }).as('postUsers')
+    cy.visit('register')
+    articles.cadastrarUsuarioMesmoEmail()
+    cy.contains('email has already been taken').should('be.visible')
+  })
 })
+
+
+
+
