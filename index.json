@@ -1,0 +1,203 @@
+{
+  "stats": {
+    "suites": 2,
+    "tests": 4,
+    "passes": 4,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-10-25T14:15:03.779Z",
+    "end": "2021-10-25T14:15:44.318Z",
+    "duration": 19753,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "f4fdc695-1d08-48c2-82d8-f5288694af2e",
+      "title": "",
+      "fullFile": "cypress/tests/ui-cadastro.spec.js",
+      "file": "cypress/tests/ui-cadastro.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "d1b01655-ea8e-4d42-a66d-ae37edb1e7dd",
+          "title": "Cadastro de usuário",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Cadastrar com dados válidos",
+              "fullTitle": "Cadastro de usuário Cadastrar com dados válidos",
+              "timedOut": null,
+              "duration": 5341,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.intercept({\n  method: 'POST',\n  path: '/api/users'\n}, {\n  statusCode: 200,\n  fixture: 'cadastro-com-sucesso'\n}).as('postUsers');\ncy.visit('register');\n_articles.default.cadastrarUsuarioComSucesso();\ncy.contains('No articles are here... yet.').should('be.visible');",
+              "err": {},
+              "uuid": "989b310d-f9c9-4c91-93e7-a484230aef87",
+              "parentUUID": "d1b01655-ea8e-4d42-a66d-ae37edb1e7dd",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Usuário já existente",
+              "fullTitle": "Cadastro de usuário Usuário já existente",
+              "timedOut": null,
+              "duration": 3007,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.intercept({\n  method: 'POST',\n  path: '/api/users'\n}, {\n  statusCode: 422,\n  fixture: 'usuario-existente'\n}).as('postUsers');\ncy.visit('register');\n_articles.default.cadastrarUsuarioMesmoNome();\ncy.contains('username has already been taken').should('be.visible');",
+              "err": {},
+              "uuid": "07461ad4-dbb8-4f25-9b12-d0ea5d3f13a3",
+              "parentUUID": "d1b01655-ea8e-4d42-a66d-ae37edb1e7dd",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "E-mail já existente",
+              "fullTitle": "Cadastro de usuário E-mail já existente",
+              "timedOut": null,
+              "duration": 2049,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.intercept({\n  method: 'POST',\n  path: '/api/users'\n}, {\n  statusCode: 422,\n  fixture: 'email-existente'\n}).as('postUsers');\ncy.visit('register');\n_articles.default.cadastrarUsuarioMesmoEmail();\ncy.contains('email has already been taken').should('be.visible');",
+              "err": {},
+              "uuid": "ae66d69e-4518-4d50-a178-e6db82e7995f",
+              "parentUUID": "d1b01655-ea8e-4d42-a66d-ae37edb1e7dd",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "989b310d-f9c9-4c91-93e7-a484230aef87",
+            "07461ad4-dbb8-4f25-9b12-d0ea5d3f13a3",
+            "ae66d69e-4518-4d50-a178-e6db82e7995f"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 10397,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "01b196ca-9246-4a23-a663-552e3e1d2f2c",
+      "title": "",
+      "fullFile": "cypress/tests/articles.spec.js",
+      "file": "cypress/tests/articles.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "cd0add75-0ed8-47be-9800-0b8a42c529e4",
+          "title": "Articles",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Cadastro de um novo artigo com sucesso",
+              "fullTitle": "Articles Cadastro de um novo artigo com sucesso",
+              "timedOut": null,
+              "duration": 9356,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_articles.default.acessarFormulario();\n_articles.default.preencherFormulario();\n_articles.default.publicarformulario();",
+              "err": {},
+              "uuid": "1f8013bd-e797-4975-8978-edd677cbfd0a",
+              "parentUUID": "cd0add75-0ed8-47be-9800-0b8a42c529e4",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "1f8013bd-e797-4975-8978-edd677cbfd0a"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 9356,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": true,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.3.1"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "mochawesome-report",
+        "quiet": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}
