@@ -26,5 +26,12 @@ export const elementsCadastrarUsuarioMesmoEmail = {
     fimUsuario:'button.btn-primary'
 }
 
+export const elementsCadastrarUsuarioSemSenha = {
+    nomeUsuario:'[placeholder=Username]',
+    emailUsuario:'[placeholder=Email]',
+    senhaUsuario:'[placeholder=Password]',
+    fimUsuario:'button.btn-primary'
+}
+
 
 

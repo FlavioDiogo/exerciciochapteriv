@@ -42,6 +42,19 @@ describe('Cadastro de usuário', () => {
     articles.cadastrarUsuarioMesmoEmail()
     cy.contains('email has already been taken').should('be.visible')
   })
+
+  it('Senha em branco', () => {
+    cy.intercept({
+      method: 'POST',
+      path: '/api/users'
+    }, {
+      statusCode: 422,
+      fixture: 'senha-inexistente'
+    }).as('postUsers')
+    cy.visit('register')
+    articles.cadastrarUsuarioSemSenha()
+    cy.contains("can't be blank").should('be.visible')
+  })
 })
 
 

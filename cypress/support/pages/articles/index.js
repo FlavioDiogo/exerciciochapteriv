@@ -3,6 +3,7 @@ const el = require ('./elements').elementsPreencherArtigo
 const ele = require ('./elements').elementsCadastrarUsuarioSucesso
 const elem = require ('./elements').elementsCadastrarUsuarioMesmoNome
 const eleme = require ('./elements').elementsCadastrarUsuarioMesmoEmail
+const element = require ('./elements').elementsCadastrarUsuarioSemSenha
  
 class articles {
     acessarFormulario(){
@@ -42,6 +43,13 @@ class articles {
         cy.get(eleme.emailUsuario).type('flaviochapteriv2@teste.com.br')
         cy.get(eleme.senhaUsuario).type('12346')
         cy.get(eleme.fimUsuario).click() 
+    } 
+
+    cadastrarUsuarioSemSenha(){
+        cy.get(element.nomeUsuario).type('flaviochapteriv4')
+        cy.get(element.emailUsuario).type('flaviochapteriv4@teste.com.br')
+        //cy.get(element.senhaUsuario).type('')
+        cy.get(element.fimUsuario).click() 
     } 
 }        
 
